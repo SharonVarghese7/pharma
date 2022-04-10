@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>StaffREG</title>
+</head>
+<body>
+	<div class="container">
+					<form method="POST" enctype="multipart/form-data" id="dd">
+						{% csrf_token %}
+						<h1 style="margin-left:-20px">Registration</h1>
+							<p>Username:</p>
+							<br>{{form.username}}
+							
+							<p>First name:</p>
+							{{form.first_name}}
+							
+							<p>Last name:</p>
+							{{form.last_name}}
+							
+							<p>Password:</p>
+							{{form.password1}}
+							
+							<p>Re-Enter Password:</p>
+							{{form.password2}}
+							
+							<p>Email:</p>
+							{{form.email}}
+							
+							<p>Age:</p>{{extend_form.age}}
+							
+							<p>Address:</p>
+							{{extend_form.address}}
+							<br>
+							<p>Image:</p>
+							{{extend_form.id_card}}
+							<br>
+							<p>Staff Status:</label></p>
+							{{form.is_staff}}<br><br>
+						<button>Submit</button>
+					
+					</form> 
+				</center>
+			
+
+				
+				<!-- <center>
+					<button>Create</button>
+					<h5 style="color: black;">Already have an account?<a href="#">Login</a></h5>
+				</center> -->
+			</div>
+		</div>
+		<br>
+		<!-- <center>
+		<a href="{% url 'adminhome' %}">
+			<button style="width: 250px;height: 40px; background-color: #0d0a27; border-color: white;border-radius: 20px;"><p style="color: white;">Back to Home</p></button>
+		</a>
+	</center> -->
+	</div>
+<style>
+	#dd{
+		width: 400px;
+		background-color: white;
+		border-radius: 20px;
+		padding-left: 260px;
+		margin-left: 380px;
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
+	body{
+		background-color: whitesmoke;
+	}
+</style>
+</body>
+</html>

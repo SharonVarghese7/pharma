@@ -1,0 +1,268 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>About Us</title>
+	<title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <style>
+  
+  </script>
+  <style>
+  /* Make the image fully responsive */
+  .carousel-inner img {
+    width: 100%;
+    height: 100%;
+  }
+  </style> 
+</head>
+<body>
+<body><div style="padding-top: 10px;"> <center><img src="{% static 'images/logo.png' %}" width="130" height="130"></center></div>
+  <div id="ii"> <div class="row">
+   <nav class="nav">
+        <div class="container-fluid">
+            <div class="logo">
+                <!-- <a href="#"><img src="C:\Users\Faem\Desktop\New folder\fuad\logo.png" width="110" height="110"></a> -->
+            </div>
+            <div id="mainListDiv" class="main_list" style="position: absolute;
+            left: 51%;
+            transform: translatex(-50%);">
+           <ul class="navlinks">
+                  <li><a class="link nav-link" href="{% url 'home' %}">Home</a></li>
+                    
+                    <li><a class="link nav-link" href="{% url 'contactus' %}">Contact</a></li>
+                    <li><a class="link nav-link" href="{% url 'view' %}">Products</a></li>
+                    {% if user.is_authenticated %}
+                    <li><a class="link nav-link" href="{% url 'logout' %}">Logout</a></li>
+                    
+              {% else %}
+              <li><a class="link nav-link" href="{% url 'userlogin' %}">Login</a></li>
+                <li><a class="link nav-link" href="{% url 'reg' %}">Register</a></li>
+              {% endif %}
+                </ul>
+            
+            </div>
+
+    </nav>
+</div><br><br><br>
+     
+    
+ 
+      </div>
+    
+  
+</nav></div>
+<div class="img">
+  <img src="{% static 'images/top-banner.png' %}"><br><br>
+  <div class="centered">
+   <div>We make healthcare</div>
+   <div>Understandable, Accessible and Affordable.</div>
+</div>
+</div>
+<div class="style__aboutus-content___Y9zGF"><div class="style__about___2rZsm"><div class="style__heading___ME_M_">About Pharma</div><div class="text-center style__f32___1ToRb"><div>India’s leading digital consumer healthcare platform</div></div>
+<div class="row style__list___1M28j">
+  <div class="col-xs-12col-sm-3style__list-item___31SDt">
+    <div class="style__item-image___2ujoa">
+      <img src="{% static 'images/medicine1.png' %}" height="120" width="120" alt="Pharmacy"></div>
+      <div class="style__item-info___1vsjr">
+        <div class="style__name___10Jjn">E-Pharmacy</div>
+        <div class="style__sub-title___3QnWO">
+          <div>
+            <div>Order medicines and health products online and get it delivered </div>
+            <div>at home from licensed pharmacies</div></div></div></div></div>
+            <!-- <div class="col-xs-12 col-sm-3 style__list-item___31SDt">
+              <div class="style__item-image___2ujoa">
+                <img src="/images/page-specific/about-us/ask-a-doctor-icon.png" alt="Online Consultations"></div> -->
+                <!-- <div class="style__item-info___1vsjr">
+                  <div class="style__name___10Jjn">Online Consultations</div>
+                  <div class="style__sub-title___3QnWO">
+                    <div>Consult qualified and registered doctors on chat for free</div></div></div></div> -->
+                    <div class="col-xs-12 col-sm-3 style__list-item___31SDt">
+                      <div class="style__item-image___2ujoa">
+                        <img src="{% static 'images/labtest.png' %}" height="120" width="120" alt="Labs Tests"></div>
+                        <div class="style__item-info___1vsjr">
+                          <div class="style__name___10Jjn">Labs Tests</div>
+                          <div class="style__sub-title___3QnWO">
+                            <div>Book lab tests online for hassle-free,</div>
+                            <div>home sample collection service. </div>
+                            <div>Get reports online. </div></div></div></div>
+                            <div class="col-xs-12 col-sm-3 style__list-item___31SDt">
+                              <div class="style__item-image___2ujoa">
+                                <img src="{% static 'images/authentic.png' %}" height="120" width="120"  alt="LegitScript"></div>
+                                <div class="style__item-info___1vsjr">
+                                  <div class="style__name___10Jjn">Authentic Information</div>
+                                  <div class="style__sub-title___3QnWO">
+                                    <div>Read medicine and health content written by qualified doctors and health professionals</div></div><div class=""><a class="style__view-policy___PKIfz" href="https://www.1mg.com/editorial-policy-processes" rel="nofollow" target="_blank"><u></u></a></div></div></div></div><div class="style__free-text-2___3Kmvs"><u>Pharma</u> brings to you an online platform, which can be accessed for all your health needs. We are trying to make healthcare a hassle-free experience for you. Get your allopathic, ayurvedic, homeopathic medicines, vitamins &amp; nutrition supplements and other health-related products delivered at home. Lab tests? That too in the comfort of your home.</div></div></div>
+
+
+
+</div>
+<div class="container">
+  <h2>Our Team:</h2>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="{% static 'images/prashant1.jpeg' %}" height="150" width="150"target="_blank">
+          <img src="{% static 'images/prashant1.jpeg' %}" height="150" width="150" alt="Lights" style="width:100%">
+          <div class="caption">
+            <p><center>Prashant Tandon<br>CEO & Co-Founder.</center></p>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="{% static 'images/grv1.jpg' %}" height="150" width="150" target="_blank">
+          <img src="{% static 'images/grv1.jpg' %}" height="150" width="150" alt="Nature" style="width:100%">
+          <div class="caption">
+            <p><center>Gaurav Agarwal<br>CTO & Co-Founder</center></p>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="{% static 'images/vks1.jpg' %}" height="150" width="150" target="_blank">
+          <img src="{% static 'images/vks1.jpg' %}" height="150" width="150" alt="Fjords" style="width:100%">
+          <div class="caption">
+            <p><center>Vikas Chauhan<br>Co-Founder</center></p>
+          </div>
+        </a>
+      
+    </div>
+  </div>
+</div>
+</div>
+<div id="di">
+	
+</div>
+<style type="text/css">
+	p{
+		text-indent: 120px;
+		text-align: justify;
+		font-family: Hevletica;
+
+	}
+	body{
+		font-size: 14px;
+		padding: 5px 5px 5px 5px;
+
+	}
+	#u{
+		margin-top: 18px;
+		float: right;
+	}
+
+.img{
+  position: relative;
+}
+
+  .centered {
+    position: absolute;
+    top: 30%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 48px;
+    font-weight: 900;
+    color: #fff;
+}
+}
+.container{
+    position: relative;
+    width: 100%;
+    min-height: 186px;
+    }
+  .style__aboutus-content___Y9zGF {
+    background-color: rgba(2,76,104,.02);
+    font-size: 16px;
+    color: #212121;
+    max-width: 1480px;
+  }
+  .style__about___2rZsm {
+    max-width: 1144px;
+}
+.style__heading___ME_M_ {
+    font-size: 28px;
+font-weight: 700;
+text-align: center;
+}
+.style__about___2rZsm .style__f32___1ToRb {
+    font-size: 32px;
+    color: #212121;
+    margin-bottom: 51px;
+}
+.style__free-text-2___3Kmvs, .style__why-1MG___2v6MJ {
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #212121;
+    margin-top: 20px;
+    font-size: 18px;
+    color: #212121;
+    }
+    .style__list___1M28j, .style__stats___-rHyw {
+    text-align: center;
+}
+.style__name___10Jjn {
+    font-size: 24px;
+    font-weight: 700;
+}
+/*.style__item-image___2ujoa{
+  margin-left: 200px;
+}*/
+.col-xs-12col-sm-3style__list-item___31SDt{
+  margin-left: 150px;
+flex: 0 0 25%
+}
+.style__banner___3u_XJ {
+    position: relative;
+    width: 100%;
+}
+.nav div.main_list {
+    height: 65px;
+    float: right;
+}
+
+.nav div.main_list ul {
+    width: 100%;
+    height: 65px;
+    display: flex;
+    list-style: none;
+    margin-bottom: ;
+    padding: 0px;
+}
+
+.nav div.main_list ul li {
+    width: auto;
+    height: 65px;
+    padding-top: 0;
+    padding-right: 3rem;
+}
+
+.nav div.main_list ul li a {
+    text-decoration: none;
+    color: black;
+    line-height: 55px;
+    font-size: 2.1rem;
+}
+
+.nav div.main_list ul li a:hover {
+    color: grey;
+}
+
+
+</style>
+</body>
+</html>
+
+
+

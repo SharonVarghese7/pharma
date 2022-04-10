@@ -1,0 +1,96 @@
+<!-- {% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Medicine</title>
+</head>
+<body>
+<div style="padding-top: 10px;"> <center><img src="{% static 'images/logo.png' %}" width="130" height="130" ></center></div>
+<br><div id='tt'>
+<h1 id="ti">{{object.name}}:-</h1>
+<br>
+<div>
+<img src="{{object.image.url}}" height="200" width="200" style="margin-left: -190px;"></div>
+<div style="margin-left: 100px;">
+<h2>Price:-</h2>
+<p>{{object.price}}</p>
+<h2>Expiry Date:-</h2>
+<p>{{object.expiry_date}}</p>
+<h2>Available Stock</h2>
+<p>{{object.available_stock}}</p>
+</div>
+<h2 id="ti">Description:-</h2>
+<p id="tu">{{object.description}}</p>
+
+
+<br><br>
+<button>Add To Cart</button>
+<button>Book Now</button> 
+</div> -->
+{% load static %}
+ <!DOCTYPE html>
+ <html>
+ <head>
+        <link rel="stylesheet" href="{% static 'css/material-design-iconic-font.min.css' %}">
+         <link rel="stylesheet" href="{% static 'css/material-design-iconic-font.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style1.css' %}">
+     <title>Login</title>
+      <style>
+        .vertical {
+            border-left: 1px solid grey;
+            height: 280px;
+            position:absolute;
+            left: 50%;
+        }
+    </style>
+ </head>
+ <body>
+ 	<div style="padding-top: 10px;"> <center><img src="{% static 'images/logo.png' %}" width="130" height="130" ></center></div>
+ <!-- Sing in  Form -->
+        <section class="sign-in" style="margin-top:-70px;">
+            <div class="container" style="margin-top: 150px; margin-bottom: 100px;">
+                <div class="signin-content">
+                    <div class="signin-image">
+                        <img src="{{object.image.url}}" height="200" width="200">
+                        
+                    </div>
+
+</head>
+  
+<body style = "text-align: center;"> 
+  
+    <h1 style = "color: green;"> 
+            </h1> 
+          
+                <div class = "vertical"></div>
+                    <div class="signin-form">
+                        <h2 class="form-title">{{object.name}}</h2>
+
+                        <form method="POST" class="register-form" id="login-form">
+                            	<h3>Price:-</h3>
+<p>{{object.price}}</p>
+<h3>Expiry Date:-</h3>
+<p>{{object.expiry_date}}</p>
+<h3>Available Stock</h3>
+<p>{{object.available_stock}}</p>
+</div>
+
+<!-- <h3>Description:-</h3>
+<p>{{object.description}}</p>
+                             -->
+                    
+                            
+                        </form>
+
+                    </div>
+                    <h3>Description:-</h3>
+<p>{{object.description}}
+	<br><br>
+	            </div> 
+        </section>
+
+    </div>
+ 
+
+</body>
+</html>

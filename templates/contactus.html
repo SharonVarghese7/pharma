@@ -1,0 +1,167 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>About Us</title>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <style>
+  
+  </script>
+  <style>
+  /* Make the image fully responsive */
+  .carousel-inner img {
+    width: 100%;
+    height: 100%;
+  }
+  </style> 
+</head>
+<body>
+<body><div style="padding-top: 10px;"> <center><img src="{% static 'images/logo.png' %}" width="130" height="130"></center></div>
+  <div id="ii"> <div class="row">
+   <nav class="nav">
+        <div class="container-fluid">
+            <div class="logo">
+                <!-- <a href="#"><img src="C:\Users\Faem\Desktop\New folder\fuad\logo.png" width="110" height="110"></a> -->
+            </div>
+            <div id="mainListDiv" class="main_list" style="position: absolute;
+            left: 51%;
+            transform: translatex(-50%);">
+           <ul class="navlinks">
+                  <li><a class="link nav-link" href="#">Home</a></li>
+                    <li><a class="link nav-link" href="{% url 'about' %}">About</a></li>
+                    <li><a class="link nav-link" href="#">Contact</a></li>
+                    <li><a class="link nav-link" href="{% url 'view' %}">Products</a></li>
+                    {% if user.is_authenticated %}
+                    <li><a class="link nav-link" href="{% url 'logout' %}">Logout</a></li>
+                    
+              {% else %}
+              <li><a class="link nav-link" href="{% url 'userlogin' %}">Login</a></li>
+                <li><a class="link nav-link" href="{% url 'reg' %}">Register</a></li>
+              {% endif %}
+                </ul>
+            
+            </div>
+
+    </nav>
+</div><br><br><br>
+     
+    
+ 
+      </div>
+    
+  
+</nav></div>
+<br><br><br><br>
+    <div class="container-fluid">
+    	<div class="row"> 
+    		<div class="col-md-6" id="div1" style="
+    left: 350px;">
+    			<p id="demo7">Home /<label id="demo6">&nbsp;Feedback</label></p><br><br><br>
+           <span class="glyphicon glyphicon-map-marker"><label id="demo8">Office Address</label></span>
+           <p id="demo10">F-56, R&B Kuka Chs Ltd,<br> J.B. Nagar, North East,<br> Kozhikode 400060</p>
+           	<br>
+           	<span class="glyphicon glyphicon-briefcase"><label id="demo8">Buisness Enquiry</label></span>
+    				<p id="demo10">(Mon - Fri | 10am - 8pm)<br><h5>9605829016</h5></p><br>
+    		<span class="glyphicon glyphicon-phone-alt"><label id="demo8">Contact Us</label></span>
+    			<p id="demo10">(Mon - Sun | 10am - 8pm)<br></p>
+    				<h5>pharmaltd21@gmail.com</h5>
+
+
+      	</div>
+      	<div class="col-xs-6" id="di2">
+	<form method="POST" enctype="multipart/form-data" style="
+    margin-left: 150px;"><br><br><br>
+	{% csrf_token %}
+	<label id="demo11">Name:</label><br>
+	{{form.name}}<br>
+	<label id="demo11">E-mail:</label><br>
+	{{form.email}}<br>
+	<label id="demo11">Feedback:</label><br>
+	{{form.message}}<br><br>
+	<button id="btn1">submit</button><br>
+</form>
+<style >
+  body{
+    font-size: 12px;
+  }
+	#demo2{
+	background-color:;
+	margin-top: -10px;
+	margin-left: 700px;
+  }
+
+
+}#demo1
+{color: green;
+padding-top: 10px;
+margin-left: 250px;}
+b{
+	color: green;
+}
+
+a{color: grey;
+  font-weight: 10px;
+ 
+  }
+a:hover{
+  color: green;
+ }
+  h1{
+  font-family: cursive;
+  font-size: 50px;
+
+
+  }
+  nav{
+  	background-color:white ;
+  }
+  body{background-color: whitesmoke;
+
+  }
+  #demo6{
+  	color: limegreen;
+  }
+  #demo8{
+  	color: #ffaa00;
+  	margin-left: 35px;
+  	margin-top: 2px;
+  }
+ span{
+ 	margin-left: 30px;
+ }
+ #demo10{
+ 	margin-left: 80px;
+ }
+ h5{
+ 	margin-left: 80px;
+
+ }
+ input{
+ 	width: 315px;
+ 	background-color: lightgrey;
+ 	border-color: transparent;
+ }
+ #di2{
+ 	border-color: transparent;
+ 	;
+ }
+
+#btn1{background-color: green;
+	color: white;
+	height: 30px;
+	border-radius: 5px;
+	width: 130px;
+	margin-left: 70px;
+  margin-top: 10px;
+</style>
+
+</body>
+</html>

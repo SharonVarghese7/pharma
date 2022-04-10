@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<title>Job details</title>
+</head>
+<body>
+<style>
+button:hover{
+background-color: white;
+color: #0d0a27;
+}
+</style>
+<div class="container">
+<center>
+<br>
+<h1>Feedback</h1>
+<br><br>
+<table class="table table_stripped">
+<tr>
+<th>Feedback</td>
+<th>UserMail</th>
+</tr>
+{% for i in feedlist %}
+<tr>
+<td>{{i.message}}</td>
+<td>{{i.email}}</td>
+</tr>
+{% endfor %}
+</table>
+<br>
+<center>
+<a href="{% url 'staffhome' %}">
+<button style="background-color: #0d0a27; color:white; width: 200px; border-color: white; border-radius: 20px;"><h4>Back to home</h4></button>
+</a>
+</center>
+
+</center>
+</div>
+</body>
+</html>
+
+

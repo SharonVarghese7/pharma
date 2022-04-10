@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Reg</title>
+</head>
+<body>
+	{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <link rel="stylesheet" type="text/css" href="{% static 'css/material-design-iconic-font.min' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/material-design-iconic-font' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style1.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+    <title>Registration</title>
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="main">
+
+        <!-- Sign up form -->
+        <section class="signup">
+            <div class="container">
+                <div class="signup-content">
+                     <div class="signup-image">
+                        <figure><img src="{% static 'images/logo.png' %}" height="150" width="150" style="padding-top:15
+                        0px;"></figure>
+                        
+                    </div>
+                    <div class="signup-form" style="padding-right:10px ">
+                        <h2 class="form-title" style="padding-left: px;">Sign up</h2>
+                        <form method="POST" class="register-form" id="register-form" enctype="multipart/form-data">
+
+	 	
+	 	{% csrf_token %}
+
+		<p>Username</p>
+		{{form.username}}
+		<p>First_Name</p>
+		{{form.first_name}}
+		<p>Last_Name</p>
+		{{form.last_name}}
+		<p>Password</p>
+		{{form.password1}}
+		<p>Reenter Password</p>
+		{{form.password2}}
+		<p>Email</p>
+		{{form.email}}
+		<p>Age</p>
+		{{extend_form.age}}
+		<P>Address</P>
+		{{extend_form.address}}
+		<P>Image</P>
+		{{extend_form.id_card}}
+		<button>register</button>
+</body>
+</html>

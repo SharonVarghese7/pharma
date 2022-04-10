@@ -1,0 +1,50 @@
+ {% load static %}
+ <!DOCTYPE html>
+ <html>
+ <head>
+        <link rel="stylesheet" href="{% static 'css/material-design-iconic-font.min.css' %}">
+         <link rel="stylesheet" href="{% static 'css/material-design-iconic-font.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style1.css' %}">
+     <title>Login</title>
+ </head>
+ <body>
+ <!-- Sing in  Form -->
+        <section class="sign-in">
+            <div class="container" style="margin-top: 150px;">
+                <div class="signin-content">
+                    <div class="signin-image">
+                        <figure><img src="{% static 'images/logo.png' %}"></figure>
+                        <a href="{% url 'reg' %}" class="signup-image-link">Create an account</a>
+                    </div>
+
+                    <div class="signin-form">
+                        <h2 class="form-title">Login</h2>
+                        <form method="POST" class="register-form" id="login-form">
+             
+                             {% csrf_token %}
+                             {{form.username}}<br>
+                             {{form.password}}
+                              <div class="form-group form-button">
+                                <input type="submit" name="signin" id="signin" class="form-submit" value="Log in"/>
+
+  <br><br>                              
+ <script src='https://www.google.com/recaptcha/api.js'></script>
+  <div class="g-recaptcha" data-sitekey="6LdXpJYdAAAAAEvQ4oUJw_s8aduWlgojJS5xGM-q"></div><br>
+  <a href="{% url 'social:begin' 'github' %}" style="color: black">Login with GitHub</a><br>
+
+ <a href="{% url 'password_reset' %}" style="color: black">Forget Password</a><br>
+                        </form>
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- JS -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

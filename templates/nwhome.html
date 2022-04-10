@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+     
+	<meta charset="utf-8">
+	<title>Pharma LTD</title>
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+      <!-- Latest compiled and minified CSS -->
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+ -->
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
+ --></head>
+
+<body>
+   <div style="padding-top: 10px;"> <center><img src="{% static 'images/logo.png' %}" width="130" height="130"></center></div>
+   <div style="margin-top:0px;">
+<nav class="nav">
+        <div class="container-fluid">
+            <div class="logo">
+                <!-- <a href="#"><img src="C:\Users\Faem\Desktop\New folder\fuad\logo.png" width="110" height="110"></a> -->
+            </div>
+            <div id="mainListDiv" class="main_list" style="position: absolute;
+            left: 51%;
+            transform: translatex(-50%);">
+           <ul class="navlinks">
+                	<li><a class="link nav-link" href="#">Home</a></li>
+                    <li><a class="link nav-link" href="{% url 'about' %}">About</a></li>
+                    <li><a class="link nav-link" href="{% url 'contactus' %}">Contact</a></li>
+                    <li><a class="link nav-link" href="{% url 'view' %}">Products</a></li>
+                    {% if user.is_authenticated %}
+                    <li><a class="link nav-link" href="{% url 'logout' %}">Logout</a></li>
+                    
+              {% else %}
+              <li><a class="link nav-link" href="{% url 'userlogin' %}">Login</a></li>
+                <li><a class="link nav-link" href="{% url 'reg' %}">Register</a></li>
+              {% endif %}
+                </ul>
+            
+            </div>
+
+    </nav>
+</div>
+    <section class="home">
+        <style type="text/css">
+            .home{
+            background-image: url('{% static "images/img0.jpg" %}');
+            }
+        </style>
+    </section>
+{{request.user}}   
+</body>
+</html>
+</style>

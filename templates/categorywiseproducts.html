@@ -1,0 +1,184 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box;}
+
+
+.image {
+	margin-top: 20px;
+  display: block;
+  width: 100%;
+	position: relative;
+
+}
+
+.d-flex{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.overlay {
+	top: 100%;
+	transform: translateY(-100%);
+  background: rgba(0, 0, 0, 0.2); /* Black see-through */
+  color: white; 
+  width:100%;
+  transition: .5s ease;
+  opacity:0;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+  letter-spacing: 2px
+  font-weight: 900;
+
+}
+/*
+.overlay {
+  opacity: 1;
+}*/
+
+.image:hover ~ .overlay{
+	opacity: 1;
+}
+</style>
+</head>
+<body>
+
+<div style="padding-top: 10px;"> <center><img src="{% static 'images/logo.png' %}" width="130" height="130" ></center></div>
+<div id="ii"> <div class="row">
+   <nav class="nav">
+        <div class="container-fluid">
+            <div class="logo">
+                <!-- <a href="#"><img src="C:\Users\Faem\Desktop\New folder\fuad\logo.png" width="110" height="110"></a> -->
+            </div>
+            <div id="mainListDiv" class="main_list" style="position: absolute;
+            left: 51%;
+            transform: translatex(-50%);">
+           <ul class="navlinks">
+                  <li><a class="link nav-link" href="{% url 'home' %}">Home</a></li>
+                  <li><a class="link nav-link" href="{% url 'about' %}">About</a></li>
+                
+                    <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Category</a>
+                      <div class="dropdown-menu">
+                        {% for i in catlist %}
+                        <a class="dropdown-item" href="{% url 'category' i.id %}">{{i.name}}</a>
+
+                        {% endfor %}
+                      </div>
+                  </li>
+                  
+                    {% if user.is_authenticated %}
+                    <li>
+              <a class="link nav-link" href="{% url 'usercartlist' %}"
+                >MyCart</a
+              >
+            </li>
+                    <li>
+                      <a class="link nav-link" href="{% url 'logout' %}">Logout</a>
+                    </li>
+                    {% else %}
+                    <li><a class="link nav-link" href="{% url 'reg' %}">Register</a></li>
+                    <li>
+                      <a class="link nav-link" href="{% url 'userlogin' %}"
+                        >Login</a
+                      >
+                    </li>
+                    {% endif %}
+                </ul>
+            
+            </div>
+
+    </nav>
+</div><br><br><br><br><br>
+     
+    
+ 
+      </div>
+    
+  
+</nav></div>
+
+	<br><br>
+
+
+<div class = 'container'>
+    <div class = 'row'>
+      {% for i in products %}
+        
+        <div class = 'col-md-4 col-lg-4'>
+          <div class="card" style="width: 22rem;">
+             <a href="{%url 'MedDetail' i.id %}"><img src="{{ i.image.url }}" alt="Avatar" class="image"></a>
+              <div class="card-body">
+                <h3 class="card-title">{{i.name}}</h3>
+                <h4 class="card-text">${{i.price}}</h4>
+                {% if user.is_authenticated %}
+              <a class="btncart" href="{% url 'cart' i.id %}"
+                >&nbsp Add to Cart<i class="fas fa-cart-plus"></i> &nbsp</a
+              >
+              {% else %}
+              <a class="btncart" href="{% url 'cart' i.id %}"
+                ><i class="fas fa-cart-plus"></i> &nbsp</a
+              >
+              {% endif %}
+              </div>
+            </div>
+        </div>
+        {% endfor %}
+
+        
+      
+
+        
+
+       
+
+    </div>
+</div>
+
+
+
+
+
+
+
+<!-- <div class="container vh-100">
+	<div class="row align-items-center vh-100">
+		{% for i in Medicine %}
+		<div class="col-sm-10 col-md-3 col-lg-3">
+			<a href="{%url 'MedDetail' i.id %}"><img src="{{ i.image.url }}" alt="Avatar" class="image">
+			<p class="overlay">{{i.name}}</p>
+		</div>
+		
+		
+		{% endfor %}
+	</div> -->
+
+	<!-- <div class="card shadow-lg">
+		<div class="card-header">Card header</div>
+		<div class="card-body">Card Body</div>
+		<div class="card-footer"> Card Fooetr</div>
+	</div>
+
+</div> -->
+  
+
+ <!-- <div class="row">
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="{{ i.image.url }}" height="150" width="150"target="_blank">
+          <img src="{{ i.image.url }}" height="150" width="150" alt="Lights" style="width:100%"> -->
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
+
