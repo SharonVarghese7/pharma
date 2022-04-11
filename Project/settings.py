@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Quick-start development settings - unsuitable for production
@@ -83,7 +83,7 @@ AUTHENTICATION_BACKENDS = (
 
     'django.contrib.auth.backends.ModelBackend',
 )
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 LOGIN_URL = 'userlogin'
 LOGOUT_URL = 'logout'
 LOGIN_REDIRECT_URL = 'home'
@@ -160,3 +160,8 @@ GOOGLE_RECAPTCHA_SECRET_KEY ="6LdXpJYdAAAAAGC8yS-_IOewsLpcsnlGTFhUOigq"
 
 SOCIAL_AUTH_GITHUB_KEY = '5dd16d0159c8d9867a60'
 SOCIAL_AUTH_GITHUB_SECRET = '05d031c2895986b97fd0f586fd098f221d2a6013'
+
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+DEBUG_COLLECTSTATIC=1
+DISABLE_COLLECTSTATIC=1
