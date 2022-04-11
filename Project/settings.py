@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-azn@l1n48=on^2x=6h!y5j+sdr-zr6*(&eg57_8%_5#43p+=7j
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1','sampledomain.com']
+ALLOWED_HOSTS = ['127.0.0.1','https://pharma.herokuapp.com/']
 
 
 # Application definition
@@ -83,7 +83,8 @@ AUTHENTICATION_BACKENDS = (
 
     'django.contrib.auth.backends.ModelBackend',
 )
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+PROJECT_ROOT   =   os.path.join(os.path.abspath(__file__))
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 LOGIN_URL = 'userlogin'
 LOGOUT_URL = 'logout'
 LOGIN_REDIRECT_URL = 'home'
@@ -97,7 +98,9 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
+import dj_database_url 
+prod_db  =  dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(prod_db)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -143,7 +146,7 @@ MEDIA_URL = '/media/'
 import os
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-STATICFILES_DIRS=[os.path.join(BASE_DIR,'static')]
+STATICFILES_DIRS=[os.path.join(PROJECT_ROOT,'static')]
 MEDIA_ROOT=os.path.join(BASE_DIR,'media')
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -162,6 +165,4 @@ SOCIAL_AUTH_GITHUB_KEY = '5dd16d0159c8d9867a60'
 SOCIAL_AUTH_GITHUB_SECRET = '05d031c2895986b97fd0f586fd098f221d2a6013'
 
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-DEBUG_COLLECTSTATIC=1
-DISABLE_COLLECTSTATIC=1
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
